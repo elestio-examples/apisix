@@ -1,0 +1,12 @@
+version: "3.7"
+
+services:
+  apisix:
+    image: apache/apisix:${SOFTWARE_VERSION_TAG}
+    restart: always
+    ports:
+      - 172.17.0.1:38394:9080
+    environment:
+      - APISIX_STAND_ALONE=true
+    volumes:
+      - ./apisix.yaml:/usr/local/apisix/conf/apisix.yaml

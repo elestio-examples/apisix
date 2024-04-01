@@ -1,0 +1,30 @@
+routes:
+  - id: httpbin_all
+    uri: /*
+    upstream:
+      nodes:
+        "httpbin.org": 1
+      type: roundrobin
+    plugin_config_id: 1
+
+  - id: httpbin_test
+    uri: /test
+    upstream:
+      nodes:
+        "httpbin.org": 1
+      type: roundrobin
+    plugin_config_id: 2
+
+plugin_configs:
+  - id: 1
+    plugins:
+      response-rewrite:
+        body: "Hello APISIX\n"
+    desc: "response-rewrite for all routes"
+
+  - id: 2
+    plugins:
+      response-rewrite:
+        body: "Hello TEST!!\n"
+    desc: "response-rewrite for /test route"
+#END
