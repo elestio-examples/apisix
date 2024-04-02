@@ -25,6 +25,6 @@ plugin_configs:
   - id: 2
     plugins:
       response-rewrite:
-        body: "Hello TEST!!\n"
+        body: "<h1 style='color:#333;text-align:center'>Hello TEST!!\n</h1>"
     desc: "response-rewrite for /test route"
 #END
