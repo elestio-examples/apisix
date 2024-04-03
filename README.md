@@ -38,4 +38,4 @@ You can access your API endpoint using the curl command.
 
 Example:
 
-    curl -u root:[ADMIN_PASSWORD] "https://[CI_CD_DOMAIN]/test"
+    curl "https://[CI_CD_DOMAIN]/test"
